@@ -1,4 +1,4 @@
-package lc10;
+package DP.lc10;
 
 public class Solution {
 }

@@ -17,7 +17,7 @@ $P[j]$为`.`或字母，则$f[i][j] \leftarrow f[i-1][j-1]$
 $P[j]$为`*`
 $P[j]$影响$P[j-1]$,使得$P[j-1]$匹配$n==0$次
 - $f[i][j] \leftarrow f[i][j-2]$
-<img src="https://raw.githubusercontent.com/maomaomqiu/Images/main/Weixin%20Image_20251207071205_19_8.jpg" alt="image" style="max-width:200px; height:auto;"/>
+<img src="https://raw.githubusercontent.com/maomaomqiu/Images/main/Weixin%20Image_20251207071205_19_8.jpg" alt="image" style="width:30%;"/>
 
 $P[j]$影响$P[j-1]$,使得$P[j-1]$匹配$n==1$次
 - $P[j-1]==S[i]$

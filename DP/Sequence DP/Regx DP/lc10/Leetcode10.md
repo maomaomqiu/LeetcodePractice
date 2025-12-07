@@ -23,3 +23,5 @@ $P[j]$影响$P[j-1]$,使得$P[j-1]$匹配$n==1$次
 - $P[j-1]==S[i]$
 TBD
 - $$
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

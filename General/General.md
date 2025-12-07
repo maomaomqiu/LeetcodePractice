@@ -1,6 +1,6 @@
 # 数据范围与时间复杂度
 
-<img src="photos\01.png"/>
+<img src="https://raw.githubusercontent.com/maomaomqiu/Images/main/02.png"/>
 
 # Useful Link
 - 贪心算法总结

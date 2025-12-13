@@ -99,3 +99,14 @@ $f[0][n], n \ge 1$, S长度为0可以匹配
 
 ### After
 ![alt text](image-1.png)
+
+## 变量统一，遍历p的时候用j，遍历s的时候用i
+### Before
+![alt text](image-3.png)
+
+### After
+![alt text](image-4.png)
+
+## 滚动数组优化[TBD]
+
+## TBD 还可以接着让AI给滚动数组的练习

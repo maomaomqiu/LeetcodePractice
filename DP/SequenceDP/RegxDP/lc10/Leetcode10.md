@@ -122,4 +122,7 @@ $f[0][n], n \ge 1$, S长度为0可以匹配
 
 # ChatGPT review建议
 
+## p '**'不合法，所以remove 以下if
+![alt text](image.png)
 
+## 在P串中扫描到P[j]为'*'时

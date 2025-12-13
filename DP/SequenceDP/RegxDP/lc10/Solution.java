@@ -25,8 +25,15 @@ class Solution {
                 else {
                     // p[j] is '*' P[j] map to j-1
                     // p[j-1] won't be '*'
-                    boolean right = f[i - 1][j] && ((p.charAt(j - 2) == s.charAt(i - 1)) || (p.charAt(j - 2) == '.'));
-                    f[i][j] = f[i][j - 2] || right;
+
+                    // '*' make p[j-1] appear 0
+                    f[i][j] = f[i][j - 2];
+
+                    // '*' make p[j-1] appear >= 1
+                    char prev = p.charAt(j - 2);
+                    if (prev == '.' || prev == s.charAt(i - 1)) {
+                        f[i][j] |= f[i - 1][j];
+                    }
                 }
             }
         }

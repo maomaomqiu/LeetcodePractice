@@ -155,7 +155,7 @@ $f[0][n], n \ge 1$, S长度为0可以匹配
 # Hint
 - 题目中的提示很重要，特别是**保证**
 
-# ChatGPT review建议
+# ChatGPT Review建议
 
 ## p '**'不合法，所以remove 以下if
 ![alt text](image.png)

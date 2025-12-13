@@ -91,3 +91,6 @@ $f[0][n], n \ge 1$, S长度为0可以匹配
 - P: "\*\*" → true
 - P: "\*\*\*" → true
 - 换言之，但凡出现"?",后续 $f[0][j]$ 都为false
+
+# ChatGPT Review建议
+## 挪走对m,n的特判,因为dp能cover

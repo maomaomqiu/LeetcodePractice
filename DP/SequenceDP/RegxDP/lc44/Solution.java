@@ -3,8 +3,6 @@ package DP.SequenceDP.RegxDP.lc44;
 class Solution {
      public boolean isMatch(String s, String p) {
         int m = s.length(), n = p.length();
-        if (m == 0 && n == 0) return true;
-        if (n == 0) return false;
         
         // m >=0, n >0
         boolean[][] dp = new boolean[m + 1][n + 1];
@@ -17,8 +15,6 @@ class Solution {
                 break;
             }
         }
-
-        if (m == 0) return dp[0][n];
 
         // m > 0, n > 0
         for (int i = 1; i <= m; i++) {

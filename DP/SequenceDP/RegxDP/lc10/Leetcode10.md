@@ -39,18 +39,18 @@ $P[j]$影响 $P[j-1]$,使得 $P[j-1]$ 匹配 $n==1$ 次
 
 <img src="https://raw.githubusercontent.com/maomaomqiu/Images/main/4611104719c1f1058767fc1ddb94c79e.jpg" alt="image" style="width:30%;"/>
 
-- $m(1) \leftarrow f[i-1][j-2] \&\& (P[j-1] == S[i] || P[j-1] == ''.'')$
+- $m(1) \leftarrow f[i-1][j-2] \ and \ (P[j-1] == S[i] \ or \ P[j-1] == ''.'')$
 
 
 
 ### 匹配2次 m(2)
 $P[j]$影响 $P[j-1]$,使得 $P[j-1]$ 匹配 $n==2$ 次
-- $P[j-1]==S[i] \&\& S[i] == S[i-1]$
-- $P[j-1]==''.''\&\&S[i]==S[i-1]$
+- $P[j-1]==S[i] \ and \ S[i] == S[i-1]$
+- $P[j-1]==''.'' \ and \ S[i]==S[i-1]$
 
 <img src="https://raw.githubusercontent.com/maomaomqiu/Images/main/24d4818951992fcadaec45e47aa4992f.jpg" alt="image" style="width:30%;"/>
 
-- $m(2) \leftarrow f[i-2][j-2] \&\& (P[j-1] == S[i] || P[j-1] == ''.'') \&\& S[i] == S[i-1]$
+- $m(2) \leftarrow f[i-2][j-2] \ and \ (P[j-1] == S[i] \ or \ P[j-1] == ''.'') \ and \ S[i] == S[i-1]$
 
 
 
@@ -58,7 +58,7 @@ $P[j]$影响 $P[j-1]$,使得 $P[j-1]$ 匹配 $n==2$ 次
 由此可以推得
 $P[j]$影响 $P[j-1]$,使得 $P[j-1]$ 匹配 $n==k$ 次
 
-- $m(k) \leftarrow f[i-k][j-2] \&\& (P[j-1] == S[i] || P[j-1] == ''.'') \&\& S[i] == S[i-1] \&\& S[i]==S[i-2] .. \&\&S[i] == S[i - (k-1)]$ 
+- $m(k) \leftarrow f[i-k][j-2] \ and \ (P[j-1] == S[i] \ or \ P[j-1] == ''.'') \ and \ S[i] == S[i-1] \ and \ S[i]==S[i-2] .. \ and \ S[i] == S[i - (k-1)]$ 
 
 
 
@@ -69,35 +69,35 @@ $P[j]$影响 $P[j-1]$,使得 $P[j-1]$ 匹配 $n==k$ 次
 
 记S中$S[i]$和 $P[j-1]$ match为$S_i$
 
-- $m(1) \leftarrow f[i-1][j-2] \&\& S_i$
+- $m(1) \leftarrow f[i-1][j-2] \ and \ S_i$
 
 记S中$S[i-1]$和 $P[j-1]$ match为$S_{i-1}$
 
-- $m(2) \leftarrow f[i-2][j-2] \&\& S_i \&\& S_{i-1}$
+- $m(2) \leftarrow f[i-2][j-2] \ and \ S_i \ and \ S_{i-1}$
 
 记S中$S[i-(k-1)]$和 $P[j-1]$ match为$S_{i-(k-1)}$
 
-- $m(k) \leftarrow f[i-k][j-2] \&\& S_i \&\& S_{i-1} ... \&\& S_{i-(k-1)}$
+- $m(k) \leftarrow f[i-k][j-2] \ and \ S_i \ and \ S_{i-1} ... \ and \ S_{i-(k-1)}$
 
 由此
 
-$f[i][j] \leftarrow f[i][j-2] \ || \ f[i-1][j-2] \&\& S_i \ || \ f[i-1][j-2] \&\& S_i \&\& S_{i-1} \ || ...$
+$f[i][j] \leftarrow f[i][j-2] \ \ or \ \ (f[i-1][j-2] \ and \ S_i) \ \ or \ \ (f[i-1][j-2] \ and \ S_i \ and \ S_{i-1}) \ \ or \ ...$
 
-$f[i-1][j] \leftarrow f[i-1][j-2] \ || \ f[i-2][j-2] \&\& S_{i-1} \ || \ f[i-3][j-2] \&\& S_{i-1} \&\& S_{i-2} \ || ...$
+$f[i-1][j] \leftarrow f[i-1][j-2] \ \ or \ \ (f[i-2][j-2] \ and \ S_{i-1}) \ \ or \ \ (f[i-3][j-2] \ and \ S_{i-1} \ and \ S_{i-2}) \ \ or \ ...$
 
-$f[i][j] \leftarrow f[i-1][j] \&\& S_i$
+$f[i][j] \leftarrow f[i-1][j] \ and \ S_i$
 
-$f[i][j] \leftarrow f[i-1][j] \&\& (P[j-1] == S[i] || P[j-1] == ''.'')$
+$f[i][j] \leftarrow f[i-1][j] \ and \ (P[j-1] == S[i] \ or  P[j-1] == ''.'')$
 
 此时，计算 $f[i][j]$ 的时间复杂度 优化为 $O(N^2)$
 
 # 汇总
 对于$S[i]$,
 $P[j]$为`.`或字母
-- $f[i][j] \leftarrow f[i-1][j-1] \&\& (P[j-1] == S[i] || P[j-1] == ''.'')$
+- $f[i][j] \leftarrow f[i-1][j-1] \ and \ (P[j-1] == S[i] \ or \ P[j-1] == ''.'')$
 
 $P[j]$为`*`
-- $f[i][j] \leftarrow f[i-1][j] \&\& (P[j-1] == S[i] || P[j-1] == ''.'')$
+- $f[i][j] \leftarrow f[i-1][j] \ and \ (P[j-1] == S[i] \ or \ P[j-1] == ''.'')$
 
 # 初始情况
 

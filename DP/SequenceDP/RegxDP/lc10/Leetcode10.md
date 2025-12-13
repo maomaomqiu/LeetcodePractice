@@ -126,3 +126,8 @@ $f[0][n], n \ge 1$, S长度为0可以匹配
 ![alt text](image.png)
 
 ## 在P串中扫描到P[j]为'*'时
+### Before
+![alt text](image-1.png)
+
+### After
+![alt text](image-2.png)

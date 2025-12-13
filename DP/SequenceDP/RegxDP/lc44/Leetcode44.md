@@ -94,3 +94,8 @@ $f[0][n], n \ge 1$, S长度为0可以匹配
 
 # ChatGPT Review建议
 ## 挪走对m,n的特判,因为dp能cover
+### Before
+![alt text](image.png)
+
+### After
+![alt text](image-1.png)

@@ -16,7 +16,7 @@ $P[j]$为`.`或字母，则 $f[i][j] \leftarrow f[i-1][j-1] \ and \ (P[j-1] == S
 
 
 # 情况2
-$P[j]$为`*`, `*`代表可以匹配 $P[j-1]$ 0, 1, ..k次，记为$m(0), m(1), ..., m(k)$
+$P[j]$为`*`, `*`代表可以匹配 $P[j-1]$ 0, 1, ..k次，记为 $m(0), m(1), ..., m(k)$
 
 $f[i][j] \leftarrow m(0) \ or \ m(1) \ or \ ... \ or \ m(k)$
 
@@ -67,15 +67,15 @@ $P[j]$影响 $P[j-1]$,使得 $P[j-1]$ 匹配 $n==k$ 次
 
 假设S,P长度均为N,k在极端情况下可以接近N,所以计算 $f[i][j]$ 的时间复杂度 接近 $O(N^3)$，可以进一步优化
 
-记S中$S[i]$和 $P[j-1]$ match为$S_i$
+记S中 $S[i]$ 和 $P[j-1]$ match为 $S_i$
 
 - $m(1) \leftarrow f[i-1][j-2] \ and \ S_i$
 
-记S中$S[i-1]$和 $P[j-1]$ match为$S_{i-1}$
+记S中 $S[i-1]$ 和 $P[j-1]$ match为 $S_{i-1}$
 
 - $m(2) \leftarrow f[i-2][j-2] \ and \ S_i \ and \ S_{i-1}$
 
-记S中$S[i-(k-1)]$和 $P[j-1]$ match为$S_{i-(k-1)}$
+记S中 $S[i-(k-1)]$ 和 $P[j-1]$ match为 $S_{i-(k-1)}$
 
 - $m(k) \leftarrow f[i-k][j-2] \ and \ S_i \ and \ S_{i-1} ... \ and \ S_{i-(k-1)}$
 
